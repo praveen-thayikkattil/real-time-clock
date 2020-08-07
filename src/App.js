@@ -29,6 +29,11 @@ class App extends Component {
       "hh:mm:ss | LTS"
     );
 
+    let seconds = this.state.currentLocalTime.format("ss");
+    let secondsInDegrees = (seconds * 60) / 90;
+    let minutes = this.state.currentLocalTime.format("mm");
+    let hours = this.state.currentLocalTime.format("hh");
+
     return (
       <div className="App">
         <header className="App-header">
@@ -39,26 +44,20 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
 
             <div className="clock-needles-wrap">
-              <div className="second-hand-needle"></div>
+              <div
+                className="second-hand-needle"
+                style={{ transform: `rotate( ${secondsInDegrees}deg )` }}
+              ></div>
               <div className="minute-hand-needle"></div>
               <div className="hour-hand-needle"></div>
             </div>
           </div>
 
-          <p>
-            An <code>RTC Clock App</code> with ability to add multiple clocks
-            for various timezones.
-          </p>
+          <p>{hours} hours</p>
+          <p>{minutes} minutes</p>
+          <p>{seconds} seconds</p>
 
           <p>{matchTimeFormatted}</p>
-
-          <p>
-            Add New RTC Clock for a different time zone, for example canada :D
-          </p>
-
-          <button href="instagram.com" className="App-action-button">
-            Add New RTC Clock
-          </button>
         </header>
       </div>
     );
