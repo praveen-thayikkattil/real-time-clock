@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+}
+
+.app-logo-wrap {
+  display: block;
+  height: 300px;
+  width: 300px;
+  // background: #ddd;
+  position: relative;
+  z-index: 1;
+  .clock-outer-ring {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    height: 280px;
+    width: 280px;
+    background-color: yellow;
+    z-index: 2;
+    box-shadow: black 0 0 10px;
+  }
+  .clock-inner-ring {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 50%;
+    height: 260px;
+    width: 260px;
+    background-color: white;
+    z-index: 3;
+    box-shadow: black 0 0 5px inset;
+  }
+
+  .App-logo {
+    height: 250px; // 40vmin;
+    width: 250px; // 40vmin;
+    pointer-events: none;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: auto;
+  }
+
+  .clock-needles-wrap {
+    background: transparent;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    z-index: 5;
+    .second-hand-needle {
+      height: 100px;
+      width: 2px;
+      background: fuchsia;
+      position: absolute;
+      z-index: 7;
+      left: 119px;
+      top: 20px;
+      transform: rotate(180deg);
+      transform-origin: bottom left;
+    }
+    .minute-hand-needle {
+      height: 80px;
+      width: 6px;
+      background: rgb(63, 243, 204);
+      position: absolute;
+      z-index: 6;
+      left: 117px;
+      top: 40px;
+      transform: rotate(30deg);
+      transform-origin: bottom left;
+    }
+    .hour-hand-needle {
+      height: 60px;
+      width: 10px;
+      background: rgb(0, 0, 0);
+      position: absolute;
+      z-index: 8;
+      left: 114px;
+      top: 60px;
+      transform: rotate(60deg);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+.App-header {
+  background-color: rgba(198, 31, 222, 1);
+  background-color: #eeeeee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-action-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: all 0.3s ease-out;
+  background-color: white;
+  border: 1px solid #bbb;
+  outline: none;
+  &:hover,
+  /*&:focus,*/
+  &:active {
+    padding-left: 40px;
+    padding-right: 40px;
+    cursor: pointer;
+    background: teal;
+    border-color: darken($color: teal, $amount: 10%);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
