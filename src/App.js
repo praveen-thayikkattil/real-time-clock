@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   render() {
-    let matchTimeFormatted = this.state.currentLocalTime.format("LTS");
+    let timeFormatted = this.state.currentLocalTime.format("LTS");
 
     let seconds = this.state.currentLocalTime.format("ss");
     let secondsInDegrees = (seconds / 60) * 360;
@@ -68,11 +68,7 @@ class App extends Component {
             </div>
           </div>
 
-          <p>{hours} hours</p>
-          <p>{minutes} minutes</p>
-          <p>{seconds} seconds</p>
-
-          <p>{matchTimeFormatted}</p>
+          <p>{timeFormatted}</p>
         </header>
       </div>
     );
