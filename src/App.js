@@ -30,8 +30,12 @@ class App extends Component {
     let seconds = this.state.currentLocalTime.format("ss");
     let secondsInDegrees = (seconds / 60) * 360;
     let secondsInDegreesAdjusted = secondsInDegrees + 0;
+
     let minutes = this.state.currentLocalTime.format("mm");
+    let minutesInDegrees = (minutes / 60) * 360;
+
     let hours = this.state.currentLocalTime.format("hh");
+    let hoursInDegrees = (hours / 12) * 360;
 
     return (
       <div className="App">
@@ -49,8 +53,18 @@ class App extends Component {
                   transform: `rotate( ${secondsInDegreesAdjusted}deg )`,
                 }}
               ></div>
-              <div className="minute-hand-needle"></div>
-              <div className="hour-hand-needle"></div>
+              <div
+                className="minute-hand-needle"
+                style={{
+                  transform: `rotate( ${minutesInDegrees}deg )`,
+                }}
+              ></div>
+              <div
+                className="hour-hand-needle"
+                style={{
+                  transform: `rotate( ${hoursInDegrees}deg )`,
+                }}
+              ></div>
             </div>
           </div>
 
